@@ -10,7 +10,7 @@ This assignment replicates two novel papers released by Deepmind, representing a
 We are working directly with raw pong frames, which are 640 × 480 pixel images with a 128 color palette, which can be computationally demanding, so we apply an essential preprocessing step to reduce the input dimensionality. The Atari's raw frames are preprocessed by first converting their RGB representation to gray-scale and down-scaling it to an 80 × 80 image. We overcome flickering, which is present in some Atari games, by taking the two previous two observations' max value. We stack four frames as input to our neural network.  
 
 ## Model Architecture
-![alt text](http://url/to/img.png)
+![alt text](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nature.com%2Farticles%2Fnature14236&psig=AOvVaw2pJPyK54LSdfxE7nHJ2Niv&ust=1615280264723000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPCMxYWqoO8CFQAAAAAdAAAAABAJ)
 
 
 ## List of Hyperparameters and their values
