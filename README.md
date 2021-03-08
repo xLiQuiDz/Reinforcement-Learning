@@ -13,7 +13,7 @@ this assignment is a replica of the work done in the paper (Mnih et al., 2015 & 
 
 ## List of Hyperparameters and their values
 All the hyperparameters' values were selected by performing an informal search on Breakout and Pong. We did not perform a regular grid search owing to the high computational cost, although it is likely that even better results could be obtained by regularly tuning the hyperparameter values.
-| Hyperparamter | Value | Value |
+| Hyperparamter | Value | Description |
 | --- | --- | --- |
 | Learning rate | 0.0001 | The learning rate used by SGD optimizer. |
 | Discount rate | 0.99 | The Discount rate gamma used in Q-Learning update. |
@@ -22,14 +22,15 @@ All the hyperparameters' values were selected by performing an informal search o
 | Minimum exploration rate | 0.1 | The minimum value of the exploration rate. |
 | Exploration decay rate | 0.01 | The rate at which the exploration rate decays. |
 | Batch size | 32 | The number of training cases over which each SGD update is computed. |
-| Replace | 1000 | The number of steps after the target network is replaced by the policy network. |
+| Replace | 1.000 | The number of steps after the target network is replaced by the policy network. |
 | Replay memory capacity | 50.000 | SGD updates are sampled from this number of most recent frames.|
 
 
 ## Installation Dependencies
 Download PyTorch from https://pytorch.org
-- python 2.7.16
+- python 3.5+
 - PyTorch 1.8.0
+- Gym 0.18.0
 - pygame 1.9.6
 - opencv-python 4.2.0
 
