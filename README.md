@@ -16,8 +16,14 @@ We are working directly with raw pong frames, which are 640 × 480 pixel images 
 ## List of Hyperparameters and their values
 | Command | Description |
 | --- | --- |
-| git status | List all new or modified files |
-| git diff | Show file differences that haven't been staged |
+| Minibatch size | List all new or modified files |
+| Replay memory size | Show file differences that haven't been staged |
+| Agent history length | Show file differences that haven't been staged |
+| Discount factor | Show file differences that haven't been staged |
+| Learning rate | Show file differences that haven't been staged |
+| Initial exploration | Show file differences that haven't been staged |
+| Final exploration | Show file differences that haven't been staged |
+| Learning rate | Show file differences that haven't been staged |
 
 
 ## References
