@@ -11,11 +11,13 @@ We are working directly with raw pong frames, which are 640 × 480 pixel images 
 ### Naive Deep Q-learning
 We use a neural network with two linear layers that take a low-level representation of the environment as input and output the Q-values, corresponding to the actions an agent can take from that state.
 
-### Human-Level Control Through Deep Reinforcement Learning With Double Q-learning
-this assignment is a replica of the work done in the paper (Mnih et al., 2015 & an Hasselt, Guez, & Silver, 2016) so we use the same network architecture as proposed. The neural network input consists of an 8 by 84 x 84 image produced by first preprocessing the observation returned by the OpenAI Atari environment. The first hidden layer convolves 32 filters of 8 x 8 with stride 4, followed by a rectified nonlinearity. The second hidden layer convolves 64 filters of 4 x 4, with side 2, again followed by rectified nonlinearity. This is followed by a third convolutional layer that convolves 64 filters of 3 x 3 with stride 1 followed by a rectifier. The final hidden layer is fully connected and consists of 512 rectified units. The output layer is a fully-connected layer with a single output for each valid action.
+### Human-Level Control Through Deep Reinforcement Learning
+This GitHub is a replica of the work done in the paper (Mnih et al., 2015 & an Hasselt) so we use the same network architecture as proposed. The neural network input consists of an 8 by 84 x 84 image produced by first preprocessing the observation returned by the OpenAI Atari environment. The first hidden layer convolves 32 filters of 8 x 8 with stride 4, followed by a rectified nonlinearity. The second hidden layer convolves 64 filters of 4 x 4, with side 2, again followed by rectified nonlinearity. This is followed by a third convolutional layer that convolves 64 filters of 3 x 3 with stride 1 followed by a rectifier. The final hidden layer is fully connected and consists of 512 rectified units. The output layer is a fully-connected layer with a single output for each valid action.
+
+### Deep Reinforcement Learning with Double Q-learning
+This GitHub is a replica of the work done in the paper (Guez, & Silver, 2016) so we use the same network architecture as proposed. The neural network input consists of an 8 by 84 x 84 image produced by first preprocessing the observation returned by the OpenAI Atari environment. The first hidden layer convolves 32 filters of 8 x 8 with stride 4, followed by a rectified nonlinearity. The second hidden layer convolves 64 filters of 4 x 4, with side 2, again followed by rectified nonlinearity. This is followed by a third convolutional layer that convolves 64 filters of 3 x 3 with stride 1 followed by a rectifier. The final hidden layer is fully connected and consists of 512 rectified units. The output layer is a fully-connected layer with a single output for each valid action.
 
 ## List of Hyperparameters
-
 ### Q-learning
 | Hyperparamter | Value | Description |
 | --- | --- | --- |
@@ -23,7 +25,7 @@ this assignment is a replica of the work done in the paper (Mnih et al., 2015 & 
 | Discount rate | 0.99 | The Discount rate gamma used in Q-Learning update. |
 | Initial exploration rate | 1.0 | The initial value of the exploration rate. |
 | Maximum exploration rate | 1.0 | The maximum value of the exploration rate. |
-| Minimum exploration rate | 0.1 | The minimum value of the exploration rate. |
+| Minimum exploration rate | 0.01 | The minimum value of the exploration rate. |
 | Exploration decay rate | 0.001 | The rate at which the exploration rate decays. |
 
 ### Naive Deep Q-learning
@@ -36,8 +38,20 @@ this assignment is a replica of the work done in the paper (Mnih et al., 2015 & 
 | Minimum exploration rate | 0.01 | The minimum value of the exploration rate. |
 | Exploration decay rate | 0.001 | The rate at which the exploration rate decays. |
 
-### Human-Level Control Through Deep Reinforcement Learning With Double Q-learning
-All the hyperparameters' values were selected by performing an informal search on Breakout and Pong. We did not perform a regular grid search owing to the high computational cost, although it is likely that even better results could be obtained by regularly tuning the hyperparameter values. we use the same hyperparameters in notebook, **Human-level Control through Deep Reinforcement Learning** and **Deep Reinforcement Learning with Double Q-learning**
+### Human-Level Control Through Deep Reinforcement Learning
+| Hyperparamter | Value | Description |
+| --- | --- | --- |
+| Learning rate | 0.0001 | The learning rate used by the SGD optimizer. |
+| Discount rate | 0.99 | The Discount rate gamma used in Q-Learning update. |
+| Initial exploration rate | 1.0 | The initial value of the exploration rate. |
+| Maximum exploration rate | 1.0 | The maximum value of the exploration rate. |
+| Minimum exploration rate | 0.1 | The minimum value of the exploration rate. |
+| Exploration decay rate | 0.01 | The rate at which the exploration rate decays. |
+| Batch size | 32 | The number of training cases over which each SGD update is computed. |
+| Replace | 1.000 | The number of steps after the target network is replaced by the policy network. |
+| Replay memory capacity | 50.000 | SGD updates are sampled from this number of most recent frames.|
+
+### Deep Reinforcement Learning With Double Q-learning
 | Hyperparamter | Value | Description |
 | --- | --- | --- |
 | Learning rate | 0.0001 | The learning rate used by the SGD optimizer. |
