@@ -16,14 +16,14 @@ this assignment is a replica of the work done in the paper, so we use the same n
 All the hyperparameters' values were selected by performing an informal search on Breakout and Pong. We did not perform a regular grid search owing to the high computational cost, although it is likely that even better results could be obtained by regularly tuning the hyperparameter values.
 | Hyperparamter | Value | Value |
 | --- | --- | --- |
-| Minibatch size |   | The number of experiences that are stored in which our agent draws uniform samples in order to learn.  |
+| Batch size | 32 | The number of experiences that are stored in which our agent draws uniform samples in order to learn.  |
 | Replay memory size | Show file differences that haven't been staged | List all new or modified files |
 | Agent history length | Show file differences that haven't been staged | List all new or modified files |
 | Discount factor | Show file differences that haven't been staged | List all new or modified files |
 | Learning rate | Show file differences that haven't been staged | List all new or modified files |
-| Initial exploration | Show file differences that haven't been staged | List all new or modified files |
-| Final exploration | Show file differences that haven't been staged | List all new or modified files |
-| Learning rate | Show file differences that haven't been staged | List all new or modified files |
+| exploration_rate | 1.0 | The initial value of the exploration rate. |
+| Final exploration | 0.1 | The final value of the exploration rate. |
+| Learning rate | 0.0001 | The learning rate used by SGD optimizer. |
 
 ## Installation Dependencies
 Download PyTorch from https://pytorch.org
