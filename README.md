@@ -13,10 +13,10 @@ We are working directly with raw pong frames, which are 640 × 480 pixel images 
 
 
 ## List of Hyperparameters and their values
-| Hyperparamter  | Value  | Description |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Command | Description |
+| --- | --- |
+| git status | List all new or modified files |
+| git diff | Show file differences that haven't been staged |
 
 
 ## References
