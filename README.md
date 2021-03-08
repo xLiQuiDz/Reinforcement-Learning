@@ -16,7 +16,7 @@ We are working directly with raw pong frames, which are 640 × 480 pixel images 
 ## List of Hyperparameters and their values
 All the hyperparameters' values were selected by performing an informal search on Breakout and Pong. We did not perform a regular grid search owing to the high computational cost, although it is likely that even better results could be obtained by regularly tuning the hyperparameter values.
 | Hyperparamter | Value | Value |
-| --- | --- |
+| --- | --- | --- |
 | Minibatch size | List all new or modified files | List all new or modified files |
 | Replay memory size | Show file differences that haven't been staged | List all new or modified files |
 | Agent history length | Show file differences that haven't been staged | List all new or modified files |
