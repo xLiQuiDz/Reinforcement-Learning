@@ -10,7 +10,7 @@ We are working directly with raw pong frames, which are 640 × 480 pixel images 
 ## Model Architecture
 this assignment is a replica of the work done in the paper (Mnih et al., 2015 & an Hasselt, Guez, & Silver, 2016) so we use the same network architecture as proposed. The neural network input consists of an 8 by 84 x 84 image produced by first preprocessing the observation returned by the OpenAI Atari environment. The first hidden layer convolves 32 filters of 8 x 8 with stride 4, followed by a rectified nonlinearity. The second hidden layer convolves 64 filters of 4 x 4, with side 2, again followed by rectified nonlinearity. This is followed by a third convolutional layer that convolves 64 filters of 3 x 3 with stride 1 followed by a rectifier. The final hidden layer is fully connected and consists of 512 rectified units. The output layer is a fully-connected layer with a single output for each valid action.
 
-## List of Hyperparameters and their values
+## List of Hyperparameters
 All the hyperparameters' values were selected by performing an informal search on Breakout and Pong. We did not perform a regular grid search owing to the high computational cost, although it is likely that even better results could be obtained by regularly tuning the hyperparameter values.
 | Hyperparamter | Value | Description |
 | --- | --- | --- |
