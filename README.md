@@ -7,7 +7,11 @@ This GitHub repository represents my learning attempt to learn this "beast" call
 ## Image Preprocessing
 We are working directly with raw pong frames, which are 640 × 480 pixel images with a 128 color palette, which can be computationally demanding, so we apply an essential preprocessing step to reduce the input dimensionality. The Atari's raw frames are preprocessed by first converting their RGB representation to gray-scale and down-scaling it to an 80 × 80 image. We overcome flickering, which is present in some Atari games, by taking the two previous two observations' max value. We stack four frames as input to our neural network. To improve the performance of our agent, we skip n frames returned as observation and repeat our action for the n skipped frames.
 
-## Model Architecture
+## Neural Network Architecture
+### Naive Deep Q-learning
+We use a neural network with two linear layers that take a low-level representation of the environment as input and output the Q-values, corresponding to the actions an agent can take from that state.
+
+### Human-Level Control Through Deep Reinforcement Learning With Double Q-learning
 this assignment is a replica of the work done in the paper (Mnih et al., 2015 & an Hasselt, Guez, & Silver, 2016) so we use the same network architecture as proposed. The neural network input consists of an 8 by 84 x 84 image produced by first preprocessing the observation returned by the OpenAI Atari environment. The first hidden layer convolves 32 filters of 8 x 8 with stride 4, followed by a rectified nonlinearity. The second hidden layer convolves 64 filters of 4 x 4, with side 2, again followed by rectified nonlinearity. This is followed by a third convolutional layer that convolves 64 filters of 3 x 3 with stride 1 followed by a rectifier. The final hidden layer is fully connected and consists of 512 rectified units. The output layer is a fully-connected layer with a single output for each valid action.
 
 ## List of Hyperparameters
