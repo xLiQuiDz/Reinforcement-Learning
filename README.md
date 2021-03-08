@@ -25,6 +25,14 @@ We are working directly with raw pong frames, which are 640 × 480 pixel images 
 | Final exploration | Show file differences that haven't been staged |
 | Learning rate | Show file differences that haven't been staged |
 
+## Installation Dependencies
+Download PyTorch from https://pytorch.org
+- python 2.7.16
+- PyTorch 1.8.0
+- pygame 1.9.6
+- opencv-python 4.2.0
+
+
 
 ## References
 1) Mnih, Volodymyr, Kavukcuoglu, Koray, Silver, David, Rusu, Andrei A, Veness, Joel, Bellemare, Marc G, Graves, Alex, Riedmiller, Martin, Fidjeland, Andreas K, Ostrovski, Georg, et al. https://www.nature.com/articles/nature14236
