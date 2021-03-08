@@ -10,14 +10,13 @@ This assignment replicates two novel papers released by Deepmind, representing a
 We are working directly with raw pong frames, which are 640 × 480 pixel images with a 128 color palette, which can be computationally demanding, so we apply an essential preprocessing step to reduce the input dimensionality. The Atari's raw frames are preprocessed by first converting their RGB representation to gray-scale and down-scaling it to an 80 × 80 image. We overcome flickering, which is present in some Atari games, by taking the two previous two observations' max value. We stack four frames as input to our neural network.  
 
 ## Model Architecture
-![alt text](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nature.com%2Farticles%2Fnature14236&psig=AOvVaw2pJPyK54LSdfxE7nHJ2Niv&ust=1615280264723000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPCMxYWqoO8CFQAAAAAdAAAAABAJ)
-
+this assignment is a replica of the work done in the paper, so we use the same network architecture as proposed. The neural network input consists of an 8 by 84 x 84 image produced by first preprocessing the observation returned by the OpenAI Atari environment. The first hidden layer convolves 32 filters of 8 x 8 with stride 4, followed by a rectified nonlinearity. The second hidden layer convolves 64 filters of 4 x 4, with side 2, again followed by rectified nonlinearity. This is followed by a third convolutional layer that convolves 64 filters of 3 x 3 with stride 1 followed by a rectifier. The final hidden layer is fully connected and consists of 512 rectified units. The output layer is a fully-connected layer with a single output for each valid action.
 
 ## List of Hyperparameters and their values
 All the hyperparameters' values were selected by performing an informal search on Breakout and Pong. We did not perform a regular grid search owing to the high computational cost, although it is likely that even better results could be obtained by regularly tuning the hyperparameter values.
 | Hyperparamter | Value | Value |
 | --- | --- | --- |
-| Minibatch size | List all new or modified files | List all new or modified files |
+| Minibatch size |   | The number of experiences that are stored in which our agent draws uniform samples in order to learn.  |
 | Replay memory size | Show file differences that haven't been staged | List all new or modified files |
 | Agent history length | Show file differences that haven't been staged | List all new or modified files |
 | Discount factor | Show file differences that haven't been staged | List all new or modified files |
@@ -32,8 +31,6 @@ Download PyTorch from https://pytorch.org
 - PyTorch 1.8.0
 - pygame 1.9.6
 - opencv-python 4.2.0
-
-
 
 ## References
 1) Mnih, Volodymyr, Kavukcuoglu, Koray, Silver, David, Rusu, Andrei A, Veness, Joel, Bellemare, Marc G, Graves, Alex, Riedmiller, Martin, Fidjeland, Andreas K, Ostrovski, Georg, et al. https://www.nature.com/articles/nature14236
