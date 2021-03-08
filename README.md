@@ -27,6 +27,6 @@ We are working directly with raw pong frames, which are 640 × 480 pixel images 
 
 
 ## References
-1) Mnih,  V.,  Kavukcuoglu,  K.,  Silver,  D.,  Rusu,  A. A.,  Veness,  J.,  Bellemare,  M. G.,  . . .  others(2015).   Human-level  control  through  deep  reinforcement  learning.nature,518(7540),529–533
-2) Van  Hasselt,  H.,  Guez,  A.,  &  Silver,  D.   (2016).   Deep  reinforcement  learning  with  double  q-learning.  InProceedings of the aaai conference on artificial intelligence(Vol. 30).
+1) Mnih, Volodymyr, Kavukcuoglu, Koray, Silver, David, Rusu, Andrei A, Veness, Joel, Bellemare, Marc G, Graves, Alex, Riedmiller, Martin, Fidjeland, Andreas K, Ostrovski, Georg, et al. https://www.nature.com/articles/nature14236
+2) Van  Hasselt,  H.,  Guez,  A.,  &  Silver,  D.   (2016).   Deep  Reinforcement  Learning  with  Double  Q-learning.  InProceedings of the aaai conference on artificial intelligence(Vol. 30). https://arxiv.org/abs/1509.06461
 
