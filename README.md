@@ -9,29 +9,17 @@ We are working directly with raw frames, which are 640 × 480 pixel images with 
 
 1) Go from three channels to one channel
     - Screen images have three channels, while our agent only needs one channel. We convert the image to grayscale.
-- Downscale to 84 x 84
-    - Images are realy large, with makes training slow. I am resizing the image to 84 x 84 to improve learning.
-- Take max of previous two frames
-    - We keep track of the two most recent frames and taking the max over the two. This is needed to overcome flickering in some Atari games.  
-- Repeat each action for four steps
-    - We repeat the same action four times for every skipped frame. This allows us to play n times more.
-- Swap channels to first possition
+2) Downscale to 84 x 84
+    - Images are realy large, with makes training slow. We resize the image to 84 x 84 to improve learning.
+3) Take the maximum of previous two frames
+    - We keep track of the two most recent frames and we take the maximum over the two. This is needed to overcome flickering in some Atari games.  
+4) Repeat each action four times
+    - We repeat the same action four times for every skipped frame. This allows us to play 4 times more.
+5) Swap channels to first possition
     - Pytorch expects that images have channels first, while the OpenAI Gym returns images with channels last. We fix this by swapping the axis of the NumPy array. 
-- Scale output
+6) Scale output
     - Scale output, since they are integers from 0 to 255. We can deal with this by dividing the image by 255. 
-- Stack four most recent frames
-
-
-
-
-
-
-
-
-
-
-
-
+7) Stack four most recent frames
 
 ## Neural Network Architecture
 ### Naive Deep Q-learning
