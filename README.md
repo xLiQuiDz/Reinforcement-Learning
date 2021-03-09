@@ -5,7 +5,33 @@ While Q-learning has shown some promising results while dealing in a discrete nu
 This GitHub repository represents my learning attempt to learn this "beast" called reinforcement learning. We first start with the simplest case of reinforcement learning, where we implement the simplest form of the Q-learning algorithm in a discrete environment where every state and action can be captured in a tabular form, called the Q-table. This is illustrated in notebook **Q-learning**. Afterward, we move to a continuous state-action space where we introduce a neural network to approximate the Q-values in every state and replicate two novel papers released by Deepmind, representing a single line of research. We implement a naive deep Q-learning algorithm using Q-learning combined with a DQN to approximate the optimal Q-value for every state-action pair in notebook **Naive Deep Q-learning**. We see that a naive deep Q-network approach applied to a continuous state space does not work for several reasons. It turns out Q-learning combined with a nonlinear function approximator such as a neural network can be unstable or even diverge, as mentioned in (Mnih et al., 2015). We overcome this instability by introducing a replay memory and a second neural network called the target network in notebook **Human-level Control through Deep Reinforcement Learning**. It turns out, as explained in (Van Hasselt, Guez, & Silver, 2016) that some Q-values tempt to be overestimated under certain conditions. We address these overestimations by introducing a double Q-learning algorithm, which was originally introduced for a tabular setting, but generalize it for large-scale function approximators in notebook **Deep Reinforcement Learning with Double Q-learning**. 
 
 ## Image Preprocessing
-We are working directly with raw pong frames, which are 640 × 480 pixel images with a 128 color palette, which can be computationally demanding, so we apply an essential preprocessing step to reduce the input dimensionality. The Atari's raw frames are preprocessed by first converting their RGB representation to gray-scale and down-scaling it to an 80 × 80 image. We overcome flickering, which is present in some Atari games, by taking the two previous two observations' max value. We stack four frames as input to our neural network. To improve the performance of our agent, we skip n frames returned as observation and repeat our action for the n skipped frames.
+We are working directly with raw frames, which are 640 × 480 pixel images with a 128 color palette, which can be computationally demanding, so we apply an essential preprocessing step to reduce the input dimensionality. Preprocessing the modules is optional but speeds up the performance of the agent. The following bullets summarise what needs to be done in order to preprocess the raw frames. 
+
+1) Go from three channels to one channel
+    - Screen images have three channels, while our agent only needs one channel. We convert the image to grayscale.
+- Downscale to 84 x 84
+    - Images are realy large, with makes training slow. I am resizing the image to 84 x 84 to improve learning.
+- Take max of previous two frames
+    - We keep track of the two most recent frames and taking the max over the two. This is needed to overcome flickering in some Atari games.  
+- Repeat each action for four steps
+    - We repeat the same action four times for every skipped frame. This allows us to play n times more.
+- Swap channels to first possition
+    - Pytorch expects that images have channels first, while the OpenAI Gym returns images with channels last. We fix this by swapping the axis of the NumPy array. 
+- Scale output
+    - Scale output, since they are integers from 0 to 255. We can deal with this by dividing the image by 255. 
+- Stack four most recent frames
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Neural Network Architecture
 ### Naive Deep Q-learning
