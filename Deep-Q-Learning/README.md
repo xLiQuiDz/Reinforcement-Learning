@@ -75,6 +75,19 @@ This GitHub is a replica of the work done in the paper (Guez, & Silver, 2016) so
 | Replace | 1.000 | The number of steps after the target network is replaced by the policy network. |
 | Replay memory capacity | 50.000 | SGD updates are sampled from this number of most recent frames.|
 
+### Dueling Network Architectures for Deep Reinforcement Learning
+| Hyperparamter | Value | Description |
+| --- | --- | --- |
+| Learning rate | 0.0001 | The learning rate used by the SGD optimizer. |
+| Discount rate | 0.99 | The Discount rate gamma used in Q-Learning update. |
+| Initial exploration rate | 1.0 | The initial value of the exploration rate. |
+| Maximum exploration rate | 1.0 | The maximum value of the exploration rate. |
+| Minimum exploration rate | 0.1 | The minimum value of the exploration rate. |
+| Exploration decay rate | 0.01 | The rate at which the exploration rate decays. |
+| Batch size | 32 | The number of training cases over which each SGD update is computed. |
+| Replace | 1.000 | The number of steps after the target network is replaced by the policy network. |
+| Replay memory capacity | 50.000 | SGD updates are sampled from this number of most recent frames.|
+
 ## Installation Dependencies
 Download PyTorch from https://pytorch.org
 - python 3.5+
